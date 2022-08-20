@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+    <script src="{% static 'js/loja.js' %}"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/storage-app.js"></script>
+
+
+</head>
+<body>
+    <h1>Dinovo</h1>
+    {% for produ in produt %}
+    <p>{{produ.nome}}</p>
+    <img src="https://firebasestorage.googleapis.com/v0/b/teste-c3fba.appspot.com/o/ecomerce%20imagens%2Ffrangodemacumba.jpg?alt=media&token=72210c79-d177-43aa-b9db-095eee900460" alt="">
+    <p>{{produ.quantidade}}</p>
+    <p id="preço1">{{produ.preço}}</p>
+    <a href="http://127.0.0.1:8000/maapp/compra/{{produ.id}}">comprar</a>
+    {% endfor %}
+</body>
+</html>

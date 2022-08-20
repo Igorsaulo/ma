@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+    <script src="{% static 'js/loja.js' %}"></script>
+</head>
+<body">
+    <h1>Dinovo</h1>
+    {% block content %}
+    <p>{{compra.nome}}</p>
+    <p>{{compra.quantidade}}</p>
+    <p id="preço1">{{compra.preço}}</p>
+    <input type="text" id="qt" onchange="total()">
+    <p>preço total</p>
+    <p  id="preço"></p>
+    <a href="http://127.0.0.1:8000/maapp/">voltar</a>
+    {% endblock %}
+</body>
+</html>
